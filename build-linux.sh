@@ -1,0 +1,1 @@
+g++ -DNDEBUG -s -O3 -m64 -std=c++17  lpaq2g-ibach.cpp -o lpaq2g-ibach.exe
