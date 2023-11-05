@@ -448,7 +448,7 @@ MatchModel::~MatchModel() {
 void MatchModel::setMatchContext() {
 
   uint64_t ha = hash(c8 & 0xffffffff, c8 >>32);
-  const uint64_t c8hash = finalize64(ha, hashBits); //order8+
+  const uint64_t c8hash = finalize64(ha, hashBits); //order 8
   uint16_t expectedChksum = checksum16(ha, hashBits);
   uint16_t* chksumPtr = &ht[c8hash].checkSum;
   buf[pos++] = c8;
@@ -537,7 +537,7 @@ class Predictor {
   uint8_t* t3;  // order 3 cxt -> state
   uint8_t* cp[4];  // pointer to bit history
 public:
-  static const int hashBits = 28; //512 MB
+  static const int hashBits = 28; //256 MB
   MatchModel mm{};  // predicts next bit by matching context
   Mixer m{ 384 };
 
