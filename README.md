@@ -4,13 +4,14 @@ This is the source code of my Task 7 submission for [GDCC (Global Data Compressi
 
 See also the very similar [lpaq2g-wiese](https://github.com/GotthardtZ/lpaq2g-wiese) compressor which was submitted for Task 5 ("Compression of Qualitative Data").
 
-# The Name
+## The Name
 
 The first part of the name 'lpaq2g-ibach' originates from one of its predecessor, lpaq2, with a suffix 'g' which stands for  'GDCC'.
 
 As a tradition in GDCC, submitted compressors have fantasy names. For task 7 I chose 'Ibach' and for Task 5 I chose 'Wiese' which are the names of two small rivers in Switzerland near my home.
 
-# What's included?
+## What's included?
+
 - C++ Source code
 - Build script for MinGW-W64 (./build-windows.cmd)
 - Build script for Linux (./build-linux.sh)
@@ -47,16 +48,16 @@ As with other context mixing compressors it processes the input file bit by bit,
 
 lpaq2g-ibach has:
 - Five models. They are:
--- MatchModel (min match length: 8, max match length: 120),
--- Order-2 model,
--- Order-4 model,
--- Order-8 model and
--- Token model (modelling words, numbers, gaps)
+  - MatchModel (min match length: 8, max match length: 120),
+  - Order-2 model,
+  - Order-4 model,
+  - Order-8 model and
+  - Token model (modelling words, numbers, gaps)
 - A mixer with 1 context set consisting of a combination of the following states as mixer contexts (resulting in 8*4*4*3 = 384 individual mixer contexts):
--- bit count (0-7),
--- quantized match length (0-3),
--- quantized token length (0-3) and 
--- token type (0-2)
+  - bit count (0-7),
+  - quantized match length (0-3),
+  - quantized token length (0-3) and 
+  - token type (0-2)
 
 It has:
 - No block detection (segmentation) - if it would have, both compression ratio and time could have been improved
